@@ -5,9 +5,9 @@ namespace BlogSitesiMVC.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Linq;
 
-    public partial class Model1 : DbContext
+    public partial class BlogDBContext : DbContext
     {
-        public Model1()
+        public BlogDBContext()
             : base("name=BlogModel")
         {
         }
