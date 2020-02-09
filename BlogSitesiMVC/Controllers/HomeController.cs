@@ -20,5 +20,11 @@ namespace BlogSitesiMVC.Controllers
         {
             return PartialView(context.Makale.ToList());
         }
+
+        public PartialViewResult PopulerMakalelerWidget()
+        {
+            var model = context.Makale.OrderByDescending(x => x.EklenmeTarihi).Take(3).ToList();
+            return PartialView(model);
+        }
     }
 }

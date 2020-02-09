@@ -405,6 +405,7 @@
     <Content Include="Views\Kategori\KategoriWidget.cshtml" />
     <Content Include="Views\Etiket\EtiketlerWidget.cshtml" />
     <Content Include="Views\Home\SiteHakkinda.cshtml" />
+    <Content Include="Views\Home\PopulerMakalelerWidget.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
