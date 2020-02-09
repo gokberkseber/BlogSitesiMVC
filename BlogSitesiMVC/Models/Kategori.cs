@@ -21,7 +21,6 @@ namespace BlogSitesiMVC.Models
         [StringLength(50)]
         public string Adi { get; set; }
 
-        [Required]
         [StringLength(500)]
         public string Aciklama { get; set; }
 

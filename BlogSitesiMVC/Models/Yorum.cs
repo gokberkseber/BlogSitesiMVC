@@ -18,7 +18,7 @@ namespace BlogSitesiMVC.Models
 
         public int MakaleID { get; set; }
 
-        public DateTime EklenmeTarihi { get; set; }
+        public DateTime? EklenmeTarihi { get; set; }
 
         [Required]
         [StringLength(150)]

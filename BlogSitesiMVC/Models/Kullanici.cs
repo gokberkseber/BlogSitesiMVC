@@ -15,8 +15,7 @@ namespace BlogSitesiMVC.Models
             Yazar = new HashSet<Yazar>();
         }
 
-        [Key]
-        public int KullanciID { get; set; }
+        public int KullaniciID { get; set; }
 
         [Required]
         [StringLength(50)]
@@ -27,12 +26,12 @@ namespace BlogSitesiMVC.Models
         public string Soyadi { get; set; }
 
         [Required]
-        [StringLength(200)]
-        public string Parola { get; set; }
+        [StringLength(50)]
+        public string KullaniciAdi { get; set; }
 
         [Required]
-        [StringLength(50)]
-        public string KullanciAdi { get; set; }
+        [StringLength(200)]
+        public string Parola { get; set; }
 
         [Required]
         [StringLength(50)]

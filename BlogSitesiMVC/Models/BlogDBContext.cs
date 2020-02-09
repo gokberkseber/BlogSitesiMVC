@@ -39,9 +39,19 @@ namespace BlogSitesiMVC.Models
                 .Map(m => m.ToTable("YazarTakip").MapLeftKey("KullaniciID").MapRightKey("YazarID"));
 
             modelBuilder.Entity<Makale>()
+                .HasMany(e => e.Resim1)
+                .WithOptional(e => e.Makale1)
+                .HasForeignKey(e => e.MakaleID);
+
+            modelBuilder.Entity<Makale>()
                 .HasMany(e => e.Yorum)
                 .WithRequired(e => e.Makale)
                 .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<Resim>()
+                .HasMany(e => e.Makale)
+                .WithOptional(e => e.Resim)
+                .HasForeignKey(e => e.ResimID);
 
             modelBuilder.Entity<Yazar>()
                 .HasMany(e => e.Makale)
