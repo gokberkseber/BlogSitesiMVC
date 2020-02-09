@@ -4,9 +4,9 @@
     <div class="sidebox widget">
         <h3 class="widget-title section-title">Kategoriler</h3>
         <ul class="circled">
-            @foreach (var Kategori in Model)
+            @foreach (BlogSitesiMVC.Models.Kategori kategori in Model)
             {
-                <li><a href="/Kategori/Makaleler/@Kategori.KategoriID">@Kategori.Adi (@Kategori.Makale.Count)</a></li>
+                <li><a href="/Kategori/Makaleler/@kategori.KategoriID">@kategori.Adi (@kategori.Makale.Count)</a></li>
             }
 
 

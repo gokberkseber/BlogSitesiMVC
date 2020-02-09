@@ -15,3 +15,29 @@
 
 }
 
+@section Etiketler
+  {
+    @{
+        Html.RenderAction("EtiketlerWidget", "Etiket");
+    }
+}
+
+@section Arama
+    {
+    <div class="sidebox widget">
+        <h3 class="widget-title section-title">Ara</h3>
+        <form class="searchform" method="get">
+            <label><i class="icon-search"></i></label>
+            <input type="text" id="s2" name="s" value="Search something" onfocus="this.value=''" onblur="this.value='Search something'" />
+            <button type="submit" class="btn">Ara</button>
+        </form>
+    </div>
+}
+
+@section SiteHakkinda
+{
+   @{ 
+       Html.RenderPartial("SiteHakkinda");
+   }
+}
+

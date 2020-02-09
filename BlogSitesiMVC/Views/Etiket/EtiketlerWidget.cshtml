@@ -1,0 +1,15 @@
+﻿@model IEnumerable<BlogSitesiMVC.Models.Etiket>
+
+    <div class="sidebox widget">
+        <h3 class="widget-title section-title">Etiketler</h3>
+        <ul class="tag-list">
+            @foreach (BlogSitesiMVC.Models.Etiket etiket in Model)
+            {
+                <li><a href="#">@etiket.Adi (@etiket.Makale.Count)</a></li>
+            }
+
+
+        </ul>
+        <!-- /.tag-list -->
+
+    </div>

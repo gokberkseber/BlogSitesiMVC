@@ -20,7 +20,7 @@ namespace BlogSitesiMVC.App_Classes
             }
         }
 
-             public static Size ResimOrtaBoyut
+        public static Size ResimOrtaBoyut
         {
             get
             {
@@ -41,4 +41,5 @@ namespace BlogSitesiMVC.App_Classes
                 return sonuc;
             }
         }
+    }
 }
