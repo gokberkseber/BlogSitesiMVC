@@ -33,8 +33,12 @@ namespace BlogSitesiMVC.Models
 
         public bool? Cinsiyet { get; set; }
 
+        public int? ResimID { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Makale> Makale { get; set; }
+
+        public virtual Resim Resim { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Kullanici> Kullanici { get; set; }

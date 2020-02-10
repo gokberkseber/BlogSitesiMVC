@@ -13,6 +13,7 @@ namespace BlogSitesiMVC.Models
         public Resim()
         {
             Makale = new HashSet<Makale>();
+            Yazar = new HashSet<Yazar>();
         }
 
         public int ResimID { get; set; }
@@ -35,5 +36,8 @@ namespace BlogSitesiMVC.Models
         public virtual ICollection<Makale> Makale { get; set; }
 
         public virtual Makale Makale1 { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Yazar> Yazar { get; set; }
     }
 }

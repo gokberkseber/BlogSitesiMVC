@@ -8,7 +8,7 @@ namespace BlogSitesiMVC.Models
     public partial class BlogDBContext : DbContext
     {
         public BlogDBContext()
-            : base("name=BlogModel")
+            : base("name=BlogDBContext")
         {
         }
 
