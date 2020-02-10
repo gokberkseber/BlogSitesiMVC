@@ -11,14 +11,20 @@ namespace BlogSitesiMVC.Controllers
     {
         BlogDBContext context = new BlogDBContext();
         // GET: Kategori
-        public ActionResult Index()
+        public ActionResult Index(int id)
         {
-            return View();
+            return View(id);
         }
 
         public PartialViewResult KategoriWidget()
         {
             return PartialView(context.Kategori.ToList());
+        }
+
+        public ActionResult MakaleListele(int id)
+        {
+            var data = context.Makale.Where(x => x.KategoriID == id).ToList();
+            return View("MakaleListeleWidget",data);
         }
     }
 }

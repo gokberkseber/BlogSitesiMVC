@@ -401,12 +401,14 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\_viewstart.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Home\MakaleListeleWidget.cshtml" />
     <Content Include="Views\Kategori\KategoriWidget.cshtml" />
     <Content Include="Views\Etiket\EtiketlerWidget.cshtml" />
-    <Content Include="Views\Home\SiteHakkinda.cshtml" />
+    <Content Include="Views\Shared\SiteHakkinda.cshtml" />
     <Content Include="Views\Home\PopulerMakalelerWidget.cshtml" />
     <Content Include="Views\Shared\MakaleListeleWidget.cshtml" />
+    <Content Include="Views\Kategori\Index.cshtml" />
+    <Content Include="Views\Shared\Arama.cshtml" />
+    <Content Include="Views\Etiket\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

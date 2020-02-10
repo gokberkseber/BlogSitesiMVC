@@ -111,16 +111,26 @@
                     </div>
                     <!-- /.content -->
                     <aside class="col-sm-4 sidebar lp30">
-                        @RenderSection("PopulerMakaleler", false)
+                        @{ 
+                            Html.RenderAction("PopulerMakalelerWidget", "Home");
+                        }
                         <!-- /.widget -->
-                        @RenderSection("SiteHakkinda", false)
+                        @{ 
+                            Html.RenderPartial("SiteHakkinda");
+                        }
                         <!-- /.widget -->
-                        @RenderSection("Arama", false)
+                        @{ 
+                            Html.RenderPartial("Arama");
+                        }
                         <!-- /.widget -->
                         <!-- /.widget -->
-                        @RenderSection("Kategoriler", false)
+                        @{ 
+                            Html.RenderAction("KategoriWidget", "Kategori");
+                        }
                         <!-- /.widget -->
-                        @RenderSection("Etiketler", false)
+                        @{ 
+                            Html.RenderAction("EtiketlerWidget", "Etiket");
+                        }
                         <!-- /.widget -->
                     </aside>
                     <!-- /.col-sm-4 .sidebar -->

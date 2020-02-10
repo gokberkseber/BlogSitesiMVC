@@ -6,7 +6,7 @@
         <ul class="circled">
             @foreach (BlogSitesiMVC.Models.Kategori kategori in Model)
             {
-                <li><a href="/Kategori/Makaleler/@kategori.KategoriID">@kategori.Adi (@kategori.Makale.Count)</a></li>
+                <li><a href="/Kategori/Index/@kategori.KategoriID">@kategori.Adi (@kategori.Makale.Count)</a></li>
             }
 
 

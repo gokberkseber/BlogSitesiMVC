@@ -1,5 +1,31 @@
 ﻿@model IEnumerable<BlogSitesiMVC.Models.Makale>
 
+@{ 
+    Layout = null;
+}
+
+
+
+
+@helper IcerikKisalt(string icerik)
+    { 
+         if (icerik.Length>300)
+         {
+           icerik.Substring(0, 300);
+         }
+         else
+         {
+           @icerik;
+         }
+
+
+      }
+
+
+
+
+
+
     <div class="blog-posts col-blog">
         @foreach (var Makale in Model)
         {
@@ -10,14 +36,14 @@
                             <div class="text-overlay">
                                 <div class="info"><span>Daha fazla oku</span></div>
                             </div>
-                            <img src="@Makale.Resim." alt="" />
+                            <img src="@Makale.Resim.OrtaBoyut" alt="" />
                         </a>
                     </figure>
                 </div>
                 <div class="col-sm-8 post-content">
-                    <div class="meta"><span class="date">13 Nov 2012</span><span class="comments"><a href="#">8 <i class="icon-chat-1"></i></a></span></div>
-                    <h2 class="post-title"><a href="blog-post.html">Adipiscing Mollis Inceptos</a></h2>
-                    <p>Aenean leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere consectetur est at lobortis. Curabitur blandit tempus porttitor. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Nullam quis risus eget urna mollis ornare vel eu leo.</p>
+                    <div class="meta"><span class="date">@Makale.EklenmeTarihi.ToShortDateString()</span><span class="comments"><a href="#">@Makale.Yorum.Count<i class="icon-chat-1"></i></a></span></div>
+                    <h2 class="post-title"><a href="/Makale/Detay/@Makale.MakaleID">@Makale.Baslik</a></h2>
+                    <p>@IcerikKisalt(Makale.Icerik)</p>
                 </div>
             </div>
 
