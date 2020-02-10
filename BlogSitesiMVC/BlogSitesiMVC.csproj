@@ -99,6 +99,9 @@
     <Content Include="Content\blog-post.html" />
     <Content Include="Content\blog.html" />
     <Content Include="Content\image\a1.jpg" />
+    <Content Include="Content\MakaleResim\BuyukBoyut\buyuk.jpg" />
+    <Content Include="Content\MakaleResim\KucukBoyut\kucuk.jpg" />
+    <Content Include="Content\MakaleResim\OrtaBoyut\orta.jpg" />
     <Content Include="Content\style.css" />
     <Content Include="Content\style\css\bootstrap.min.css" />
     <Content Include="Content\style\css\color\blue.css" />
@@ -347,6 +350,7 @@
     <Content Include="Content\style\type\fontello\fontello-circle.svg" />
     <Content Include="Content\style\type\fontello\fontello-social.svg" />
     <Content Include="Content\style\type\fontello\fontello.svg" />
+    <Content Include="Content\YazarResim\author.jpg" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
   </ItemGroup>
