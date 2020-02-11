@@ -83,6 +83,11 @@
                                     <li><a href="#" class="btn"><i class="icon-s-pinterest"></i></a></li>
                                 </ul>
                             </li>
+                            @if(User.Identity.IsAuthenticated)
+                            {
+                              <li><a href="/Kullanici/CikisYap/@this.Request.RawUrl">Cıkıs Yap</a></li>
+                            }
+                            
                             <!--/social-dropdown -->
                         </ul>
                         <!--/.navbar-nav -->

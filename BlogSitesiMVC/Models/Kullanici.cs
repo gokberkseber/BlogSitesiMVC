@@ -12,7 +12,10 @@ namespace BlogSitesiMVC.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Kullanici()
         {
-            Yazar = new HashSet<Yazar>();
+            KullaniciRol = new HashSet<KullaniciRol>();
+            Makale = new HashSet<Makale>();
+            Kullanici1 = new HashSet<Kullanici>();
+            Kullanici2 = new HashSet<Kullanici>();
         }
 
         public int KullaniciID { get; set; }
@@ -43,7 +46,24 @@ namespace BlogSitesiMVC.Models
 
         public DateTime KayitTarihi { get; set; }
 
+        public int? ResimID { get; set; }
+
+        public bool? Yazar { get; set; }
+
+        public bool? Aktif { get; set; }
+
+        public virtual Resim Resim { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Yazar> Yazar { get; set; }
+        public virtual ICollection<KullaniciRol> KullaniciRol { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Makale> Makale { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Kullanici> Kullanici1 { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Kullanici> Kullanici2 { get; set; }
     }
 }

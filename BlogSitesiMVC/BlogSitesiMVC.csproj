@@ -355,11 +355,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Classes\CustomRoleProvider.cs" />
     <Compile Include="App_Classes\Settings.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\EtiketController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\KategoriController.cs" />
+    <Compile Include="Controllers\KullaniciController.cs" />
     <Compile Include="Controllers\MakaleController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -368,10 +370,11 @@
     <Compile Include="Models\Etiket.cs" />
     <Compile Include="Models\Kategori.cs" />
     <Compile Include="Models\Kullanici.cs" />
+    <Compile Include="Models\KullaniciRol.cs" />
     <Compile Include="Models\Makale.cs" />
     <Compile Include="Models\Resim.cs" />
+    <Compile Include="Models\Rol.cs" />
     <Compile Include="Models\sysdiagrams.cs" />
-    <Compile Include="Models\Yazar.cs" />
     <Compile Include="Models\Yorum.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -417,6 +420,8 @@
     <Content Include="Views\Shared\Arama.cshtml" />
     <Content Include="Views\Etiket\Index.cshtml" />
     <Content Include="Views\Makale\Detay.cshtml" />
+    <Content Include="Views\Kullanici\GirisYap.cshtml" />
+    <Content Include="Views\Makale\MakaleEkle.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

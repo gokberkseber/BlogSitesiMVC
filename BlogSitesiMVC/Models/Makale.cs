@@ -40,9 +40,9 @@ namespace BlogSitesiMVC.Models
 
         public virtual Kategori Kategori { get; set; }
 
-        public virtual Resim Resim { get; set; }
+        public virtual Kullanici Kullanici { get; set; }
 
-        public virtual Yazar Yazar { get; set; }
+        public virtual Resim Resim { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Resim> Resim1 { get; set; }
