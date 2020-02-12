@@ -35,46 +35,54 @@
 
                     <nav class="collapse navbar-collapse pull-right">
                         <ul class="nav navbar-nav">
-                            <li><a href="index.html">Home</a></li>
-                            <li class="current dropdown">
-                                <a href="#" class="dropdown-toggle js-activated">Journal</a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="blog.html">List View</a></li>
-                                    <li><a href="blog2.html">Classic View</a></li>
-                                    <li><a href="blog3.html">Grid View 2 Columns</a></li>
-                                    <li><a href="blog4.html">Grid View 3 Columns</a></li>
-                                    <li><a href="blog-post.html">Blog Post</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle js-activated">Our Works</a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="portfolio.html">Classic Portfolio</a></li>
-                                    <li><a href="portfolio2.html">Fullscreen Portfolio</a></li>
-                                    <li><a href="portfolio-post.html">Post with Images</a></li>
-                                    <li><a href="portfolio-post2.html">Post with Columns</a></li>
-                                    <li><a href="portfolio-post3.html">Post with Video</a></li>
-                                    <li><a href="portfolio-post4.html">Post with Slider</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle js-activated">Pages</a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="about.html">About</a></li>
-                                    <li><a href="services.html">Services</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle js-activated">Features</a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="elements.html">Elements</a></li>
-                                    <li><a href="headings.html">Headings</a></li>
-                                    <li><a href="pricing.html">Pricing Tables</a></li>
-                                    <li><a href="flat-icons.html">Flat Icons</a></li>
-                                    <li><a href="font-icons.html">Font Icons</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="/Home/Index">Anasayfa</a></li>
+
+                            @if (User.IsInRole("Yazar"))
+                            {
+                                <li class="current dropdown">
+                                    <a href="#" class="dropdown-toggle js-activated">Yazar Paneli</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="/Makale/MakaleEkle"></a>Makale Ekle</li>
+                                        <li><a href="/Yazar/Takipcileri">Takipcilerim</a></li>
+                                        <li><a href="/Yazar/Makalelerim">Makalelerim</a></li>
+
+                                    </ul>
+                                </li>
+                            }
+
+
+                            @if (User.IsInRole("Admin"))
+                            {
+                                <li class="dropdown">
+                                    <a href="/Admin/Index" class="dropdown-toggle js-activated">Admin Paneli</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="/Makale/MakaleEkle">Makale Ekle</a></li>
+                                        <li><a href="/Kategori/KategoriEkle">Kategori Ekle</a></li>
+                                        <li><a href="/Etiket/EtiketEkle">Etiket Ekle</a></li>
+                                        <li><a href="/Admin/RolEkle">Rol Ekle</a></li>
+                                        <li><a href="/Admin/KullaniciEkle">Kullanici Ekle</a></li>
+                                        <li><a href="/Admin/YazarOnaylari">Yazar Onaylari</a></li>
+                                    </ul>
+                                </li>
+                            }
+
+                            @if (!User.IsInRole("Yazar") || !User.Identity.IsAuthenticated ||!User.IsInRole("A"))
+                            {
+                                <li class="dropdown">
+                                    <a href="/Yazar/YazarOl" class="dropdown-toggle js-activated">Yazar Ol</a>
+
+                                </li>
+                            }
+
+                            @if (!User.Identity.IsAuthenticated)
+                            {
+                                <li class="dropdown">
+                                    <a href="/Kullanici/UyeOl" class="dropdown-toggle js-activated">Uye Ol</a>
+
+                                </li>
+                            }
+
+                            <li><a href="contact.html">Iletisim</a></li>
                             <li class="dropdown social-dropdown pull-right">
                                 <div class="share btn btn-default dropdown-toggle" data-toggle="dropdown"><i class="icon-heart-1"></i></div>
                                 <ul class="button-group dropdown-menu dropdown-menu-right share-links">
@@ -83,11 +91,16 @@
                                     <li><a href="#" class="btn"><i class="icon-s-pinterest"></i></a></li>
                                 </ul>
                             </li>
-                            @if(User.Identity.IsAuthenticated)
+
+                            @if (User.Identity.IsAuthenticated)
                             {
-                              <li><a href="/Kullanici/CikisYap/@this.Request.RawUrl">Cıkıs Yap</a></li>
+                                <li><a href="/Kullanici/CikisYap">Cikis Yap</a></li>
                             }
-                            
+                            else
+                            {
+                                <li><a href="/Kullanici/GirisYap">Giris Yap</a></li>
+                            }
+
                             <!--/social-dropdown -->
                         </ul>
                         <!--/.navbar-nav -->
