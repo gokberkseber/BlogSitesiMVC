@@ -47,7 +47,7 @@ namespace BlogSitesiMVC.Controllers
         public ActionResult CikisYap()
         {
             FormsAuthentication.SignOut();
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("GirisYap");
         }
 
         string ValidateUser(string ka,string pwd)
@@ -63,6 +63,31 @@ namespace BlogSitesiMVC.Controllers
                 return "";
                 
             }
+        }
+
+
+        public ActionResult UyeOl()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult UyeOl(Kullanici kl, string rdBay,string rdBayan)
+        {
+            if (!string.IsNullOrEmpty(rdBay))
+                kl.Cinsiyet = true;
+            if (!string.IsNullOrEmpty(rdBayan))
+                kl.Cinsiyet = false;
+            kl.Yazar = false;
+            kl.Onaylandi = true;
+            kl.Aktif = true;
+            kl.DogumTarihi = kl.DogumTarihi.Value.Date;
+            kl.KayitTarihi = DateTime.Now;
+            context.Kullanici.Add(kl);
+            context.SaveChanges();
+            return RedirectToAction("GirisYap");
+
+           
         }
     }
 }
