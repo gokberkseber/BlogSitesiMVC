@@ -24,7 +24,7 @@ namespace BlogSitesiMVC.Controllers
             return View(data);
         }
 
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Admin,Yazar")]
         public ActionResult MakaleEkle()
         {
             return View();

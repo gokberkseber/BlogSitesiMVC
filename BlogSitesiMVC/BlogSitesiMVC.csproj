@@ -358,6 +358,7 @@
     <Compile Include="App_Classes\CustomRoleProvider.cs" />
     <Compile Include="App_Classes\Settings.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\EtiketController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\KategoriController.cs" />
@@ -425,6 +426,7 @@
     <Content Include="Views\Makale\MakaleEkle.cshtml" />
     <Content Include="Views\Kullanici\UyeOl.cshtml" />
     <Content Include="Views\Yazar\YazarOl.cshtml" />
+    <Content Include="Views\Admin\YazarOnaylari.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
