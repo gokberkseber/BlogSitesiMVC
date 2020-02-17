@@ -422,6 +422,7 @@
     <Content Include="Views\Makale\Detay.cshtml" />
     <Content Include="Views\Kullanici\GirisYap.cshtml" />
     <Content Include="Views\Makale\MakaleEkle.cshtml" />
+    <Content Include="Views\Kullanici\UyeOl.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

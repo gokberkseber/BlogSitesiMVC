@@ -50,6 +50,7 @@ namespace BlogSitesiMVC.Models
 
         public bool? Yazar { get; set; }
 
+        public Nullable<bool> Onaylandi  { get; set; }
         public bool? Aktif { get; set; }
 
         public virtual Resim Resim { get; set; }
