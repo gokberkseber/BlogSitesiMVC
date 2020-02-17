@@ -36,6 +36,8 @@ namespace BlogSitesiMVC.Models
         [StringLength(200)]
         public string Parola { get; set; }
 
+        public string Aciklama { get; set; }
+
         [Required]
         [StringLength(50)]
         public string MailAdres { get; set; }
@@ -50,7 +52,8 @@ namespace BlogSitesiMVC.Models
 
         public bool? Yazar { get; set; }
 
-        public Nullable<bool> Onaylandi  { get; set; }
+        public bool? Onaylandi { get; set; }
+
         public bool? Aktif { get; set; }
 
         public virtual Resim Resim { get; set; }

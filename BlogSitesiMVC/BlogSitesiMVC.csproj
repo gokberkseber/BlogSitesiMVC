@@ -363,6 +363,7 @@
     <Compile Include="Controllers\KategoriController.cs" />
     <Compile Include="Controllers\KullaniciController.cs" />
     <Compile Include="Controllers\MakaleController.cs" />
+    <Compile Include="Controllers\YazarController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -423,6 +424,7 @@
     <Content Include="Views\Kullanici\GirisYap.cshtml" />
     <Content Include="Views\Makale\MakaleEkle.cshtml" />
     <Content Include="Views\Kullanici\UyeOl.cshtml" />
+    <Content Include="Views\Yazar\YazarOl.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
