@@ -24,10 +24,19 @@ namespace BlogSitesiMVC.Controllers
             return View(data);
         }
 
-        [Authorize(Roles = "Admin,Yazar")]
+        [Authorize(Roles = "Admin")]
         public ActionResult MakaleEkle()
         {
             return View();
+        }
+
+        [AllowAnonymous]
+        public string Begen(int id)
+        {
+            Makale mkl = context.Makale.FirstOrDefault(x => x.MakaleID == id);
+            mkl.Begeni++;
+            context.SaveChanges();
+            return mkl.Begeni.ToString();
         }
     }
 }

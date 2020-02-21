@@ -5,6 +5,25 @@
 }
 
 
+    <script src="~/Content/style/js/jquery.min.js"></script>
+<script>
+    $(document).ready(function myfunction() {
+        $("a.begen").click(function myfunction() {
+            var id = $(this).data("id");
+            var link = "/Makale/Begen/" + id;
+            $.ajax({
+                type: "GET",
+                url: link,
+                success: function (result)
+                {
+                    $("a.begen").html(result);
+                }
+            });
+        });
+    
+    });
+</script>
+
 
 
 @helper IcerikKisalt(string icerik)
@@ -41,7 +60,25 @@
                     </figure>
                 </div>
                 <div class="col-sm-8 post-content">
-                    <div class="meta"><span class="date">@Makale.EklenmeTarihi.ToShortDateString()</span><span class="comments"><a href="#">@Makale.Yorum.Count<i class="icon-chat-1"></i></a></span></div>
+                    <div class="meta">
+                        <span class="date">@Makale.EklenmeTarihi.ToShortDateString()</span><span class="comments"><a href="#">@Makale.Yorum.Count<i class="icon-chat-1"></i></a></span>
+                     
+                            <span>
+                                <a class="begen" href="javascript:void(0)" data-id="@Makale.MakaleID">
+                                    @Makale.Begeni
+
+                                </a>
+                                <img src="~/Content/image/like2.png" />
+                            </span>
+                        
+
+                        <span>
+                            @Makale.GoruntulenmeSayisi
+                            <img src="~/Content/image/view.png" />
+
+                        </span>
+                    </div>
+
                     <h2 class="post-title"><a href="/Makale/Detay/@Makale.MakaleID">@Makale.Baslik</a></h2>
                     <p>@IcerikKisalt(Makale.Icerik)</p>
                 </div>
